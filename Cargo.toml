@@ -1,0 +1,12 @@
+[package]
+name = "gomoku-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+adw = { version = "0.7", package = "libadwaita", features = ["v1_5"] }
+gtk = { version = "0.9.5", package = "gtk4", features = ["v4_14"] }
+serde = { version = "1.0", features = ["derive"] }
+
+[build-dependencies]
+glib-build-tools = "0.20"

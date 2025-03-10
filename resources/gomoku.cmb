@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<cambalache-project version="0.94.0" target_tk="gtk-4.0">
+  <ui>
+	(1,1,"gomoku.ui","gomoku.ui",None,None,None,None,None,None,None),
+	(2,1,None,"drawing.ui",None,None,None,None,None,None,None)
+  </ui>
+  <ui_library>
+	(1,"gtk","4.14",None),
+	(1,"libadwaita","1.6",None)
+  </ui_library>
+  <object>
+	(1,1,"AdwApplicationWindow","GomokuWindow",None,None,None,None,0,None,None),
+	(1,3,"AdwHeaderBar","header",8,None,"top",None,0,None,None),
+	(1,4,"AdwWindowTitle","title",3,None,"title",None,0,None,None),
+	(1,5,"GomokuDrawing","drawing",8,None,"bottom",None,1,None,None),
+	(1,6,"GtkButton","new_button",3,None,"start",None,1,None,None),
+	(1,7,"GtkButton","undo_button",3,None,"start",None,2,None,None),
+	(1,8,"AdwToolbarView",None,1,None,None,None,0,None,None),
+	(2,1,"GtkWidget","GomokuDrawing",None,None,None,None,0,None,None)
+  </object>
+  <object_property>
+	(1,1,"GtkWindow","default-height","512",None,None,None,None,None,None,None,None,None),
+	(1,1,"GtkWindow","default-width","512",None,None,None,None,None,None,None,None,None),
+	(1,3,"AdwHeaderBar","title-widget",None,None,None,None,None,4,None,None,None,None),
+	(1,4,"AdwWindowTitle","title","GomokuSolver",None,None,None,None,None,None,None,None,None),
+	(1,5,"GtkWidget","height-request","640",None,None,None,None,None,None,None,None,None),
+	(1,5,"GtkWidget","vexpand","True",None,None,None,None,None,None,None,None,None),
+	(1,5,"GtkWidget","width-request","640",None,None,None,None,None,None,None,None,None),
+	(1,6,"GtkButton","label","New",None,None,None,None,None,None,None,None,None),
+	(1,7,"GtkButton","icon-name","edit-undo",None,None,None,None,None,None,None,None,None),
+	(2,1,"GtkWidget","overflow","hidden",None,None,None,None,None,None,None,None,None)
+  </object_property>
+  <object_signal>
+	(1,1,6,"GtkButton","clicked","new_clicked",None,0,1,0,None),
+	(2,1,7,"GtkButton","clicked","undo_clicked",None,0,1,0,None)
+  </object_signal>
+</cambalache-project>

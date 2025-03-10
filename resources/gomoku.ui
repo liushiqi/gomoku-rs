@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.94.1 -->
+<interface>
+  <!-- interface-name gomoku.ui -->
+  <requires lib="gtk" version="4.14"/>
+  <requires lib="libadwaita" version="1.6"/>
+  <template class="GomokuWindow" parent="AdwApplicationWindow">
+    <property name="default-height">512</property>
+    <property name="default-width">512</property>
+    <child>
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar" id="header">
+            <property name="title-widget">
+              <object class="AdwWindowTitle" id="title">
+                <property name="title">GomokuSolver</property>
+              </object>
+            </property>
+            <child type="start">
+              <object class="GtkButton" id="new_button">
+                <property name="label">New</property>
+                <signal name="clicked" handler="new_clicked" swapped="yes"/>
+              </object>
+            </child>
+            <child type="start">
+              <object class="GtkButton" id="undo_button">
+                <property name="icon-name">edit-undo</property>
+                <signal name="clicked" handler="undo_clicked" swapped="yes"/>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="bottom">
+          <object class="GomokuDrawing" id="drawing">
+            <property name="height-request">640</property>
+            <property name="vexpand">True</property>
+            <property name="width-request">640</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
