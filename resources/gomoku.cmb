@@ -11,28 +11,66 @@
   </ui_library>
   <object>
 	(1,1,"AdwApplicationWindow","GomokuWindow",None,None,None,None,0,None,None),
-	(1,3,"AdwHeaderBar","header",8,None,"top",None,0,None,None),
+	(1,3,"AdwHeaderBar","header",19,None,"top",None,0,None,None),
 	(1,4,"AdwWindowTitle","title",3,None,"title",None,0,None,None),
-	(1,5,"GomokuDrawing","drawing",8,None,"bottom",None,1,None,None),
+	(1,5,"GomokuDrawing","drawing",19,None,"bottom",None,1,None,None),
 	(1,6,"GtkButton","new_button",3,None,"start",None,1,None,None),
 	(1,7,"GtkButton","undo_button",3,None,"start",None,2,None,None),
-	(1,8,"AdwToolbarView",None,1,None,None,None,0,None,None),
+	(1,9,"GtkMenuButton","menu_button",3,None,"end",None,3,None,None),
+	(1,12,"GtkPopoverMenu","popover_menu",9,None,None,None,0,None,None),
+	(1,13,"(menu)","main_menu",None,None,None,None,1,None,None),
+	(1,15,"(item)",None,20,None,None,None,0,None,None),
+	(1,16,"(item)",None,20,None,None,None,1,None,None),
+	(1,19,"AdwToolbarView",None,1,None,None,None,0,None,None),
+	(1,20,"(section)",None,13,None,None,None,0,None,None),
+	(1,21,"(section)",None,13,None,None,None,1,None,None),
+	(1,22,"(item)",None,21,None,None,None,0,None,None),
+	(1,23,"(item)",None,21,None,None,None,1,None,None),
 	(2,1,"GtkWidget","GomokuDrawing",None,None,None,None,0,None,None)
   </object>
   <object_property>
 	(1,1,"GtkWindow","default-height","512",None,None,None,None,None,None,None,None,None),
 	(1,1,"GtkWindow","default-width","512",None,None,None,None,None,None,None,None,None),
 	(1,3,"AdwHeaderBar","title-widget",None,None,None,None,None,4,None,None,None,None),
-	(1,4,"AdwWindowTitle","title","GomokuSolver",None,None,None,None,None,None,None,None,None),
+	(1,4,"AdwWindowTitle","title","Gomoku",None,None,None,None,None,None,None,None,None),
 	(1,5,"GtkWidget","height-request","640",None,None,None,None,None,None,None,None,None),
 	(1,5,"GtkWidget","vexpand","True",None,None,None,None,None,None,None,None,None),
 	(1,5,"GtkWidget","width-request","640",None,None,None,None,None,None,None,None,None),
-	(1,6,"GtkButton","label","New",None,None,None,None,None,None,None,None,None),
+	(1,6,"GtkButton","icon-name","list-add-symbolic",None,None,None,None,None,None,None,None,None),
+	(1,6,"GtkWidget","tooltip-text","_New Game",1,None,None,None,None,None,None,None,None),
 	(1,7,"GtkButton","icon-name","edit-undo",None,None,None,None,None,None,None,None,None),
+	(1,7,"GtkWidget","tooltip-text","_Undo",None,None,None,None,None,None,None,None,None),
+	(1,9,"GtkMenuButton","direction","none",None,None,None,None,None,None,None,None,None),
+	(1,9,"GtkMenuButton","icon-name","open-menu-symbolic",None,None,None,None,None,None,None,None,None),
+	(1,9,"GtkMenuButton","menu-model",None,None,None,None,None,None,None,None,None,None),
+	(1,9,"GtkMenuButton","popover",None,None,None,None,None,12,None,None,None,None),
+	(1,9,"GtkMenuButton","primary","True",None,None,None,None,None,None,None,None,None),
+	(1,9,"GtkWidget","tooltip-text","_Main Menu",1,None,None,None,None,None,None,None,None),
+	(1,12,"GtkPopoverMenu","menu-model","13",None,None,None,None,None,None,None,None,None),
+	(1,15,"(item)","action","win.set-players",None,None,None,None,None,None,None,None,None),
+	(1,15,"(item)","label","1 Player",None,None,None,None,None,None,None,None,None),
+	(1,15,"(item)","target","SinglePlayer",None,None,None,None,None,None,None,None,None),
+	(1,16,"(item)","action","win.set-players",None,None,None,None,None,None,None,None,None),
+	(1,16,"(item)","label","2 Players",None,None,None,None,None,None,None,None,None),
+	(1,16,"(item)","target","MultiplePlayer",None,None,None,None,None,None,None,None,None),
+	(1,20,"(section)","label","Players",None,None,None,None,None,None,None,None,None),
+	(1,21,"(section)","label","AI Chess",None,None,None,None,None,None,None,None,None),
+	(1,22,"(item)","action","win.set-ai-chess",None,None,None,None,None,None,None,None,None),
+	(1,22,"(item)","label","White",None,None,None,None,None,None,None,None,None),
+	(1,22,"(item)","target","AIUseWhite",None,None,None,None,None,None,None,None,None),
+	(1,23,"(item)","action","win.set-ai-chess",None,None,None,None,None,None,None,None,None),
+	(1,23,"(item)","label","Black",None,None,None,None,None,None,None,None,None),
+	(1,23,"(item)","target","AIUseBlack",None,None,None,None,None,None,None,None,None),
 	(2,1,"GtkWidget","overflow","hidden",None,None,None,None,None,None,None,None,None)
   </object_property>
   <object_signal>
 	(1,1,6,"GtkButton","clicked","new_clicked",None,0,1,0,None),
 	(2,1,7,"GtkButton","clicked","undo_clicked",None,0,1,0,None)
   </object_signal>
+  <object_data>
+	(1,15,"(item)",1,2,"check_button",1,None,None,None,None)
+  </object_data>
+  <object_data_arg>
+	(1,15,"(item)",1,2,"name","custom")
+  </object_data_arg>
 </cambalache-project>

@@ -1,4 +1,5 @@
-mod drawing;
+mod ai;
+mod game;
 mod window;
 
 use gtk::prelude::*;

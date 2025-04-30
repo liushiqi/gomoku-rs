@@ -2,6 +2,6 @@
 <gresources>
     <gresource prefix="/cyou/liushiqi/Gomoku/">
         <file compressed="true" preprocess="xml-stripblanks">gomoku.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">cross.svg</file>
+        <file compressed="true" preprocess="xml-stripblanks">drawing.ui</file>
     </gresource>
 </gresources>

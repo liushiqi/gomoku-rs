@@ -4,6 +4,7 @@
   <!-- interface-name gomoku.ui -->
   <requires lib="gtk" version="4.14"/>
   <requires lib="libadwaita" version="1.6"/>
+  <requires lib="gio" version="2.0"/>
   <template class="GomokuWindow" parent="AdwApplicationWindow">
     <property name="default-height">512</property>
     <property name="default-width">512</property>
@@ -13,19 +14,34 @@
           <object class="AdwHeaderBar" id="header">
             <property name="title-widget">
               <object class="AdwWindowTitle" id="title">
-                <property name="title">GomokuSolver</property>
+                <property name="title">Gomoku</property>
               </object>
             </property>
             <child type="start">
               <object class="GtkButton" id="new_button">
-                <property name="label">New</property>
+                <property name="icon-name">list-add-symbolic</property>
+                <property name="tooltip-text" translatable="yes">_New Game</property>
                 <signal name="clicked" handler="new_clicked" swapped="yes"/>
               </object>
             </child>
             <child type="start">
               <object class="GtkButton" id="undo_button">
                 <property name="icon-name">edit-undo</property>
+                <property name="tooltip-text">_Undo</property>
                 <signal name="clicked" handler="undo_clicked" swapped="yes"/>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton" id="menu_button">
+                <property name="direction">none</property>
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="popover">
+                  <object class="GtkPopoverMenu" id="popover_menu">
+                    <property name="menu-model">main_menu</property>
+                  </object>
+                </property>
+                <property name="primary">True</property>
+                <property name="tooltip-text" translatable="yes">_Main Menu</property>
               </object>
             </child>
           </object>
@@ -40,4 +56,32 @@
       </object>
     </child>
   </template>
+  <menu id="main_menu">
+    <section>
+      <attribute name="label">Players</attribute>
+      <item>
+        <attribute name="action">win.set-players</attribute>
+        <attribute name="label">1 Player</attribute>
+        <attribute name="target">SinglePlayer</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.set-players</attribute>
+        <attribute name="label">2 Players</attribute>
+        <attribute name="target">MultiplePlayer</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="label">AI Chess</attribute>
+      <item>
+        <attribute name="action">win.set-ai-chess</attribute>
+        <attribute name="label">White</attribute>
+        <attribute name="target">AIUseWhite</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.set-ai-chess</attribute>
+        <attribute name="label">Black</attribute>
+        <attribute name="target">AIUseBlack</attribute>
+      </item>
+    </section>
+  </menu>
 </interface>
